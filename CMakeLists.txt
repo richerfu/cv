@@ -14,6 +14,10 @@ add_library(cv STATIC src/validator/string_validator.h
         src/base/base.h
         src/cv.h
         src/utils/util.h
-        src/cv.cpp)
+        src/cv.cpp
+        src/common/type.h
+        src/utils/util.cpp)
+
+target_link_libraries(cv nlohmann_json::nlohmann_json)
 
 add_subdirectory(examples)

@@ -5,15 +5,17 @@
 #ifndef CV_UTIL_H
 #define CV_UTIL_H
 
-#include "string"
+#include <string>
+#include <nlohmann/json.hpp>
+#include "../common/type.h"
+
+using namespace cv::common;
 
 namespace cv {
     namespace utils {
         class Utils{
         public:
-            static std::string parse_type(void* data){
-                return "hello";
-            };
+            static ValueType parse_type(nlohmann::json *data);
         };
     }
 }
