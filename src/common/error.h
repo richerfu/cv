@@ -5,10 +5,14 @@
 #ifndef CV_ERROR_H
 #define CV_ERROR_H
 
-enum class VALIDATOR_ERROR {
-    SUCCESS,
-    PARAMS_INVALID,
-    RESOLVE_DATA_ERROR
-};
+namespace cv {
+    namespace common {
+        enum class ValidatorCode {
+            Success,
+            ParamsInvalid,
+            ResolveDataError
+        };
+    }
+}
 
 #endif //CV_ERROR_H

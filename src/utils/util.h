@@ -15,7 +15,8 @@ namespace cv {
     namespace utils {
         class Utils{
         public:
-            static ValueType parse_type(nlohmann::json *data);
+            static ValueType parseType(nlohmann::json *data);
+            static std::string getValueTypeString(ValueType valueType);
         };
     }
 }

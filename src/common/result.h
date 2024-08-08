@@ -6,12 +6,17 @@
 #define CV_RESULT_H
 
 #include "string"
+#include "error.h"
 
 // parse result
-struct Result {
-    bool success;
-    std::string message;
-    uint8_t code;
-};
+namespace cv {
+    namespace common {
+        struct Result {
+            bool success;
+            std::string message;
+            ValidatorCode code;
+        };
+    }
+}
 
 #endif //CV_RESULT_H

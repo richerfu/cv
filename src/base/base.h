@@ -6,6 +6,9 @@
 #define CV_BASE_H
 
 #include "../common/result.h"
+#include <nlohmann/json.hpp>
+
+using namespace cv::common;
 
 namespace cv {
     namespace base {
@@ -13,7 +16,7 @@ namespace cv {
         private:
         public:
             // every validator should implement this virtual function
-            virtual Result parse(void* data) = 0;
+            virtual Result parse(nlohmann::json data) = 0;
         };
     }
 }

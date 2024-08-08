@@ -7,18 +7,26 @@
 
 #include "../common/result.h"
 #include "../base/base.h"
+#include "../utils/util.h"
+#include "../common/error.h"
+
+using namespace cv::utils;
+using namespace cv::common;
 
 namespace cv {
     namespace validator {
         using namespace cv::base;
 
-        class StringValidator:public BaseValidator {
+        class StringValidator : public BaseValidator {
         public:
-            Result parse(void* data) override {
-
+            Result parse(nlohmann::json data) override {
+                auto r = Utils::parseType(&data);
+                if (r == ValueType::String) {
+                    return Result{true, "success", ValidatorCode::Success};
+                }
+                return Result{false, "except string but get" + Utils::getValueTypeString(r),
+                              ValidatorCode::ParamsInvalid};
             }
-
-        private:
         };
     }
 }

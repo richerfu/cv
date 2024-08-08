@@ -9,9 +9,16 @@
 
 using json = nlohmann::json;
 
+using namespace cv;
+
 int main() {
     std::string hello = "hello";
-    auto ret = cv::Validator::string();
 
-    std::cout << std::setw(4) << json::meta() << std::endl;
+    json value = hello;
+
+    auto v = Validator::string();
+
+    auto ret = v.parse(value);
+
+    std::cout << ret.message << std::endl;
 }

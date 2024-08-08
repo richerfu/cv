@@ -14,8 +14,11 @@ namespace cv {
             Array,
             Object,
             Null,
-            Unknown
+            Unknown,
+            Undefined
         };
+
+
     }
 }
 
